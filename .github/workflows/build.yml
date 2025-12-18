@@ -17,11 +17,12 @@ jobs:
         sudo apt-get install -yq \
           build-essential \
           cmake \
+          catch2 \
           libdrogon-dev \
           libjsoncpp-dev\
           uuid-dev \
           zlib1g-dev \
-          postgresql-server-dev-all \
+          postgresql \
           libsqlite3-dev \
           libmariadb-dev \
           libbrotli-dev \
