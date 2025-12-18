@@ -17,7 +17,6 @@ jobs:
         sudo apt-get install -yq \
           build-essential \
           cmake \
-          libcatch2-dev \
           libdrogon-dev \
           libjsoncpp-dev\
           uuid-dev \
