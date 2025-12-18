@@ -31,7 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./mdbook/book
+          path: ./book
 
   deploy:
     runs-on: ubuntu-latest
