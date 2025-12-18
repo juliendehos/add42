@@ -1,0 +1,39 @@
+name: Build project and run tests
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update 
+        sudo apt-get install -yq \
+          build-essential \
+          cmake \
+          libcatch2-dev \
+          libdrogon-dev \
+          libjsoncpp-dev\
+          uuid-dev \
+          zlib1g-dev \
+          postgresql-server-dev-all \
+          libsqlite3-dev \
+          libmariadb-dev \
+          libbrotli-dev \
+          libhiredis-dev \
+          libyaml-cpp-dev
+
+    - name: Build project
+      run: |
+        cmake -S . -B build
+        cmake --build build
+
+    - name: Run tests
+      run: build/test.out
+
