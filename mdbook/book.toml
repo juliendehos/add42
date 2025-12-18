@@ -1,0 +1,5 @@
+[book]
+authors = ["ulco"]
+language = "fr"
+src = "src"
+title = "add42"
