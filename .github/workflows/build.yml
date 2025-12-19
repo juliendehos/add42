@@ -37,7 +37,8 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./build/test.out
+        name: cmake_build
+        path: build
 
   test:
     runs-on: ubuntu-latest
@@ -47,6 +48,8 @@ jobs:
     steps:
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v5
+      with:
+        name: cmake_build
 
     - name: Run tests
       run: ./build/test.out
