@@ -52,6 +52,9 @@ jobs:
         name: cmake_build
 
     - name: Run tests
-      run: ./build/test.out
+      run: |
+        ls
+        pwd
+        ./build/test.out
 
 
