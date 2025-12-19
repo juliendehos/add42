@@ -34,10 +34,10 @@ jobs:
         cmake -S . -B build
         cmake --build build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./build
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./build
 
   test:
     runs-on: ubuntu-latest
