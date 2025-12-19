@@ -21,6 +21,7 @@ RUN apt-get install -yq \
 
 WORKDIR /root/add42
 ADD . /root/add42/
+RUN ["rm", "-rf", "build"]
 RUN ["cmake", "-S", ".", "-B", "build"]
 RUN ["cmake", "--build", "build", "-j4"]
 

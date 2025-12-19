@@ -34,23 +34,7 @@ jobs:
         cmake -S . -B build
         cmake --build build
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./build
-
-  test:
-    runs-on: ubuntu-latest
-
-    needs: build
-
-    steps:
-    - name: Download all workflow run artifacts
-      uses: actions/download-artifact@v5
-
     - name: Run tests
-      run: |
-        tar xf artifact.tar
+      run:
         ./build/test.out
-
 
