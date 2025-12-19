@@ -34,6 +34,13 @@ jobs:
         cmake -S . -B build
         cmake --build build
 
+  test:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
     - name: Run tests
       run: build/test.out
+
 
