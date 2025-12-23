@@ -15,10 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - env:
+        IMAGE_ID: ghcr.io/${{ github.repository }}
+
       - name: Build the Docker image
-        run: |
-          export IMAGE_ID=ghcr.io/${{ github.repository }}
-          docker build . -t ${IMAGE_ID}
+        run: docker build . -t ${IMAGE_ID}
 
       - name: Push the Docker image
         run: |
