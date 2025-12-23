@@ -12,11 +12,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+        IMAGE_ID: ghcr.io/${{ github.repository }}
+
     steps:
       - uses: actions/checkout@v4
-
-      - env:
-          IMAGE_ID: ghcr.io/${{ github.repository }}
 
       - name: Build the Docker image
         run: docker build . -t ${IMAGE_ID}
