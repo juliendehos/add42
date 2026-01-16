@@ -6,10 +6,17 @@ add_library( mymaths src/mymaths.cpp )
 target_include_directories( mymaths  PUBLIC include )
 
 # exécutable
-find_package(Drogon CONFIG REQUIRED)
-set(CMAKE_CXX_STANDARD 20)
+find_package( libhv )
+if(NOT libhv_FOUND)
+  include(FetchContent)
+  FetchContent_Declare(hv
+    GIT_REPOSITORY https://github.com/ithewei/libhv
+    GIT_TAG v1.3.4)
+  FetchContent_MakeAvailable(hv)
+endif()
+
 add_executable( add42.out app/main.cpp )
-target_link_libraries( add42.out PRIVATE mymaths Drogon::Drogon )
+target_link_libraries( add42.out PRIVATE mymaths hv )
 install( TARGETS add42.out DESTINATION bin )
 
 # tests

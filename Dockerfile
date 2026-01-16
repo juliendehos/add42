@@ -8,16 +8,7 @@ RUN apt-get install -yq \
   build-essential \
   cmake \
   libcatch2-dev \
-  libdrogon-dev \
-  libjsoncpp-dev\
-  uuid-dev \
-  zlib1g-dev \
-  postgresql-server-dev-all \
-  libsqlite3-dev \
-  libmariadb-dev \
-  libbrotli-dev \
-  libhiredis-dev \
-  libyaml-cpp-dev
+  git
 
 WORKDIR /root/add42
 ADD . /root/add42/

@@ -6,10 +6,10 @@
 
 ## Compilation
 
-Installer `cmake`, `catch2` et `drogon`, puis :
+Installer `cmake`, `catch2` et `git`, puis :
 
 ```
-cmake -S . -B build
+cmake -S . build
 cmake --build build
 ```
 

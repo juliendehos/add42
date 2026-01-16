@@ -18,16 +18,7 @@ jobs:
           build-essential \
           cmake \
           catch2 \
-          libdrogon-dev \
-          libjsoncpp-dev\
-          uuid-dev \
-          zlib1g-dev \
-          postgresql \
-          libsqlite3-dev \
-          libmariadb-dev \
-          libbrotli-dev \
-          libhiredis-dev \
-          libyaml-cpp-dev
+          git
 
     - name: Build project
       run: |
